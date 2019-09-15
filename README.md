@@ -16,7 +16,7 @@ Foody is an online food delivery system.
 
 * **Merchant Management System** :- Merchant management system is responsible for managing the information of merchants(phone number, email, profile etc)
 
-* **OTP Service** :- OTP Service is responsible for generating, managing and sending the OTP through Notification service.
+* **OTP Service** :- OTP Service is responsible for generating, managing and sending the OTP SMS through Notification service.
 
 * **Notification Service** :- Notification service is resposible for send out push and sms notification to the users.
 
@@ -34,7 +34,7 @@ Foody is an online food delivery system.
 
 * **Nginx** :- Nginx is a open source web server that will be using for routing the request to specific service based on host and path, Rate limiting, Authenticating token using Account service. We will be using kubernetes nginx ingress controller, since it's easy to manage, configure using yamls annotations.
 
-* **Prometheus** :- We will be using prometheus to collect and alert on metrics exposed from services. Some of the metrics being expose are :- Number of request based on status codes, service and url path, Response time of request based on status codes, service and url path etc.
+* **StackDriver** :- We will be using google stackdriver to collect and alert on metrics exposed from services. Services will expose metric in prometheus style fashion. Each service pod will run stackdriver-prometheus-sidecar to extract metric from metric endpoint and push it to stackdriver. Some of the metrics being expose are :- Number of request based on status codes, service and url path, Response time of request based on status codes, service and url path etc.
 
 * **Jaeger** :- Jaeger is open source distributed tracing system that will help us to monitor and troubleshoot the system. Each service is instrumented with Jaeger to provide the system trace. The Jaeger trace ID will be send to the client as request id and the logger(foody-common) is also instrumented to log trace ID, span ID, user ID, app ID and user role.
 
@@ -50,7 +50,7 @@ Foody is an online food delivery system.
 - [ ] merchant-management-system
 - [ ] otp-service
 - [ ] notification-service
-- [x] catalog-service
+- [x] catalog-service (with some UT test cases)
 - [ ] order-management-system
 - [ ] coupon-management-system
 - [ ] delivery-management-system
