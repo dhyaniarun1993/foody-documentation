@@ -44,8 +44,8 @@ Foody is an online food delivery system.
 
 ## Progress
 
-- [ ] account-service
-- [ ] customer-management-system
+- [x] account-service(Unit Test cases pending)
+- [x] customer-management-system(In progress)
 - [ ] rider-management-service
 - [ ] merchant-management-system
 - [ ] otp-service
